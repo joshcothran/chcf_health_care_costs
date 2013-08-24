@@ -1,0 +1,304 @@
+{
+    "year_data": [
+        {
+            "id": 1960,
+            "percent_gdp": 5.2,
+            "cpi": 29.6,
+            "medical_cpi": 22.3
+        },
+        {
+            "id": 1961,
+            "percent_gdp": 5.4,
+            "cpi": 29.9,
+            "medical_cpi": 22.9
+        },
+        {
+            "id": 1962,
+            "percent_gdp": 5.4,
+            "cpi": 30.2,
+            "medical_cpi": 23.5
+        },
+        {
+            "id": 1963,
+            "percent_gdp": 5.6,
+            "cpi": 30.6,
+            "medical_cpi": 24.1
+        },
+        {
+            "id": 1964,
+            "percent_gdp": 5.8,
+            "cpi": 31,
+            "medical_cpi": 24.6
+        },
+        {
+            "id": 1965,
+            "percent_gdp": 5.8,
+            "cpi": 31.5,
+            "medical_cpi": 25.2
+        },
+        {
+            "id": 1966,
+            "percent_gdp": 5.9,
+            "cpi": 32.4,
+            "medical_cpi": 26.3
+        },
+        {
+            "id": 1967,
+            "percent_gdp": 6.2,
+            "cpi": 33.4,
+            "medical_cpi": 28.2
+        },
+        {
+            "id": 1968,
+            "percent_gdp": 6.5,
+            "cpi": 34.8,
+            "medical_cpi": 29.9
+        },
+        {
+            "id": 1969,
+            "percent_gdp": 6.7,
+            "cpi": 36.7,
+            "medical_cpi": 31.9
+        },
+        {
+            "id": 1970,
+            "percent_gdp": 7.2,
+            "cpi": 38.8,
+            "medical_cpi": 34
+        },
+        {
+            "id": 1971,
+            "percent_gdp": 7.4,
+            "cpi": 40.5,
+            "medical_cpi": 36.1
+        },
+        {
+            "id": 1972,
+            "percent_gdp": 7.5,
+            "cpi": 41.8,
+            "medical_cpi": 37.3
+        },
+        {
+            "id": 1973,
+            "percent_gdp": 7.5,
+            "cpi": 44.4,
+            "medical_cpi": 38.8
+        },
+        {
+            "id": 1974,
+            "percent_gdp": 7.8,
+            "cpi": 49.3,
+            "medical_cpi": 42.4
+        },
+        {
+            "id": 1975,
+            "percent_gdp": 8.2,
+            "cpi": 53.8,
+            "medical_cpi": 47.5
+        },
+        {
+            "id": 1976,
+            "percent_gdp": 8.4,
+            "cpi": 56.9,
+            "medical_cpi": 52
+        },
+        {
+            "id": 1977,
+            "percent_gdp": 8.6,
+            "cpi": 60.6,
+            "medical_cpi": 57
+        },
+        {
+            "id": 1978,
+            "percent_gdp": 8.5,
+            "cpi": 65.2,
+            "medical_cpi": 61.8
+        },
+        {
+            "id": 1979,
+            "percent_gdp": 8.6,
+            "cpi": 72.6,
+            "medical_cpi": 67.5
+        },
+        {
+            "id": 1980,
+            "percent_gdp": 9.2,
+            "cpi": 82.4,
+            "medical_cpi": 74.9
+        },
+        {
+            "id": 1981,
+            "percent_gdp": 9.5,
+            "cpi": 90.9,
+            "medical_cpi": 82.9
+        },
+        {
+            "id": 1982,
+            "percent_gdp": 10.3,
+            "cpi": 96.5,
+            "medical_cpi": 92.5
+        },
+        {
+            "id": 1983,
+            "percent_gdp": 10.4,
+            "cpi": 99.6,
+            "medical_cpi": 100.6
+        },
+        {
+            "id": 1984,
+            "percent_gdp": 10.3,
+            "cpi": 103.9,
+            "medical_cpi": 106.8
+        },
+        {
+            "id": 1985,
+            "percent_gdp": 10.5,
+            "cpi": 107.6,
+            "medical_cpi": 113.5
+        },
+        {
+            "id": 1986,
+            "percent_gdp": 10.7,
+            "cpi": 109.6,
+            "medical_cpi": 122
+        },
+        {
+            "id": 1987,
+            "percent_gdp": 11,
+            "cpi": 113.6,
+            "medical_cpi": 130.1
+        },
+        {
+            "id": 1988,
+            "percent_gdp": 11.4,
+            "cpi": 118.3,
+            "medical_cpi": 138.6
+        },
+        {
+            "id": 1989,
+            "percent_gdp": 11.8,
+            "cpi": 124,
+            "medical_cpi": 149.3
+        },
+        {
+            "id": 1990,
+            "percent_gdp": 12.5,
+            "cpi": 130.7,
+            "medical_cpi": 162.8
+        },
+        {
+            "id": 1991,
+            "percent_gdp": 13.2,
+            "cpi": 136.2,
+            "medical_cpi": 177
+        },
+        {
+            "id": 1992,
+            "percent_gdp": 13.5,
+            "cpi": 140.3,
+            "medical_cpi": 190.1
+        },
+        {
+            "id": 1993,
+            "percent_gdp": 13.8,
+            "cpi": 144.5,
+            "medical_cpi": 201.4
+        },
+        {
+            "id": 1994,
+            "percent_gdp": 13.7,
+            "cpi": 148.2,
+            "medical_cpi": 211
+        },
+        {
+            "id": 1995,
+            "percent_gdp": 13.9,
+            "cpi": 152.4,
+            "medical_cpi": 220.5
+        },
+        {
+            "id": 1996,
+            "percent_gdp": 13.8,
+            "cpi": 156.9,
+            "medical_cpi": 228.2
+        },
+        {
+            "id": 1997,
+            "percent_gdp": 13.7,
+            "cpi": 160.5,
+            "medical_cpi": 234.6
+        },
+        {
+            "id": 1998,
+            "percent_gdp": 13.7,
+            "cpi": 163,
+            "medical_cpi": 242.1
+        },
+        {
+            "id": 1999,
+            "percent_gdp": 13.8,
+            "cpi": 166.6,
+            "medical_cpi": 250.6
+        },
+        {
+            "id": 2000,
+            "percent_gdp": 13.8,
+            "cpi": 172.2,
+            "medical_cpi": 260.8
+        },
+        {
+            "id": 2001,
+            "percent_gdp": 14.5,
+            "cpi": 177.1,
+            "medical_cpi": 272.8
+        },
+        {
+            "id": 2002,
+            "percent_gdp": 15.4,
+            "cpi": 179.9,
+            "medical_cpi": 285.6
+        },
+        {
+            "id": 2003,
+            "percent_gdp": 15.9,
+            "cpi": 184,
+            "medical_cpi": 297.1
+        },
+        {
+            "id": 2004,
+            "percent_gdp": 16,
+            "cpi": 188.9,
+            "medical_cpi": 310.1
+        },
+        {
+            "id": 2005,
+            "percent_gdp": 16,
+            "cpi": 195.3,
+            "medical_cpi": 323.2
+        },
+        {
+            "id": 2006,
+            "percent_gdp": 16.1,
+            "cpi": 201.6,
+            "medical_cpi": 336.2
+        },
+        {
+            "id": 2007,
+            "percent_gdp": 16.2,
+            "cpi": 207.342,
+            "medical_cpi": 351.054
+        },
+        {
+            "id": 2008,
+            "percent_gdp": 16.6,
+            "cpi": 215.303,
+            "medical_cpi": 364.065
+        },
+        {
+            "id": 2009,
+            "percent_gdp": 17.6,
+            "cpi": 214.537,
+            "medical_cpi": 375.613
+        }
+    ]
+}

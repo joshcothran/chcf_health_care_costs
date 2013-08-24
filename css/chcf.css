@@ -1,0 +1,248 @@
+body {
+	overflow: hidden;
+}
+
+a {
+	cursor:default;
+	color:#005580;
+}
+
+a:hover {
+	color: #00416C;
+}
+
+#content {
+	margin: auto;
+	display:none;
+}
+
+#header {
+	position: absolute;
+	display:block;
+	top:0px;
+}
+
+#chart {
+	position: absolute;
+}
+
+#controls {
+	position: absolute;
+	display: block;
+}
+
+#footer {
+	position: absolute;
+	display:block;
+}
+
+#page_description {
+	float:left;
+	/* font-size:16px; */
+	font-size:20px;
+	font-weight:bold;
+}
+
+#page_caption {
+	float:right;
+	font-size:18px;
+	font-weight:bold;
+}
+
+#year_buttons {
+	position:absolute;
+	display:inline-block;
+}
+
+#year_slider {
+	position:absolute;
+	display:inline-block;
+}
+
+.ui-slider-label {
+	font-size:8px;
+	color:#333;
+	margin-top:-7px;
+}
+
+.ui-slider .ui-slider-handle {
+	width: .6em;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+	margin-left: -.35em;
+}
+
+#year_select {
+	width: 70px;
+	display:none;
+}
+
+#dimension_test {
+	position:absolute;
+	left:-10000px;
+	line-height:normal;
+}
+
+.tree_row {
+	display:block;
+	position:absolute;
+	width:100%;
+}
+
+.cell {
+	height: 100%;
+	position:absolute;
+	border-style: solid;
+	border-color: white;
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+.row_label {
+	position:absolute;
+	white-space:nowrap;
+	text-align:right;
+	left:0px;
+	top:50%;
+	height:18px;
+	line-height:18px;
+	margin-top: -9px;
+	font-size: 12px;
+}
+
+.payer_cell_text {
+	font-size:10px;
+}
+
+.payer_cell {
+	float:left;
+	background-color: #666;
+	text-align:center;
+	color: white;
+}
+
+.p2 { background-color: #B94D27; } /* Private Insurance - rust */
+.p3 { background-color: #EA8F23; } /* Out-of-Pocket - orange */
+.p4 { background-color: #FEC661; } /* Other Payers - light orange */
+.p5 { background-color: #B3AB46; } /* Medicare - green */
+.p6 { background-color: #596338; } /* Medicaid - dark green*/
+.p7 { background-color: #E2D678; } /* Other Public Insurance - light green*/
+
+
+#tooltip {
+	position:absolute;
+	background-color:white;
+	border-style:solid;
+	border-color:black;
+	left:0px;
+	z-index:1;
+	display:none;
+}
+
+#tooltip_arrow {
+	position:absolute;
+	z-index: 1;
+	display:none;
+}
+
+#tooltip h4 {
+	margin-bottom: 5px;
+}
+
+.tt_row {
+	display: block;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.tt_legend {
+	width: 18px;
+	height: 18px;
+	display:inline-block;
+}
+
+.tt_legend_desc {
+	display:inline-block;
+	font-weight: bold;
+	line-height: 18px;
+}
+
+.tt_spending {
+	display:inline-block;
+	line-height: 18px;
+}
+
+#year_label {
+	z-index:1;
+	position: absolute;
+	text-align: center;
+	font-size: 240px;
+	color: black;
+	
+	filter: alpha(opacity=15); /* internet explorer */
+	-khtml-opacity: 0.15;      /* khtml, old safari */
+	-moz-opacity: 0.15;       /* mozilla, netscape */
+	opacity: 0.15;           /* fx, safari, opera */	
+}
+
+.tree_row_rollover {
+	z-index:2;
+	position: absolute;
+	
+	background-color:white;
+	border-style: solid;
+	border-color: white;
+	
+	filter: alpha(opacity=0); /* internet explorer */
+	-khtml-opacity: 0.0;      /* khtml, old safari */
+	-moz-opacity: 0.0;       /* mozilla, netscape */
+	opacity: 0.0;           /* fx, safari, opera */	
+	
+}
+
+.footer_tooltip {
+	position:absolute;
+	z-index: 3;
+	height: 380px;
+	border: 1px solid black;
+	background-color: white;
+	display: none;
+	left:0px;
+	bottom:0px;
+}
+
+.footer_tooltip h4 {
+	margin-bottom: 5px;
+}
+
+.tt_visible {
+	display: block;
+}
+
+#footnotes_link {
+	position:absolute;
+	top:0;
+	text-align: right;
+	font-size:14px;
+}
+
+#footer_legend {
+	position:absolute;
+	top:0;
+	text-align: left;
+}
+
+.footer_legend {
+	position:relative;
+	display:inline-block;
+	width: 18px;
+	height: 18px;
+}
+
+.footer_legend_desc {
+	display:inline-block;
+	padding-right: 10px;
+	font-size:12px;
+}
+
