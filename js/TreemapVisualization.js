@@ -1,5 +1,5 @@
 function TreemapVisualization() {
-	var tt_service_title = $("#tt_service_title")
+	var tt_service_title = $("#tt_service_title");
 	var chart = d3.select("#chart");
 	var rows;
 	var row_labels = new Object();
@@ -42,7 +42,7 @@ function TreemapVisualization() {
 					var h = rowHeight(d);
 					if (h < 4) return "4px";
 					else return h + "px";	
-				})
+				});
 				
 		// Init rows
 		var row_rollovers_spending_tally = 0;
@@ -66,7 +66,7 @@ function TreemapVisualization() {
 					var h = rowHeight(d);
 					if (h < 4) return "4px";
 					else return h + "px";	
-				})
+				});
 								
 		// Init columns
 		_.each(services_elements, function(service_id) {			
@@ -105,7 +105,7 @@ function TreemapVisualization() {
 		});
 		
 		initRollovers();		
-	}
+	};
 	
 	
 	this.update = function() {		
@@ -125,7 +125,7 @@ function TreemapVisualization() {
 					var h = rowHeight(d);
 					if (h < 4) return "4px";
 					else return h + "px";	
-				})
+				});
 			row_rollovers.transition()
 				.duration(TRANSITION_DURATION)
 				.style("top", function(d) {
@@ -168,7 +168,7 @@ function TreemapVisualization() {
 					if (h < 4) return "4px";
 					else return h + "px";	
 				});
-		}
+		};
 	
 		_.each(services_elements, function(service_id) {
 			var col_spending_tally = 0;
@@ -194,7 +194,7 @@ function TreemapVisualization() {
 						return l + "px";
 					})
 					.style("width", function(d) { return colWidth(service_id, d)  + "px"; })
-					.style("line-height", function() {return rowHeight(service_id) + "px";})	
+					.style("line-height", function() {return rowHeight(service_id) + "px";});
 			} else {
 				col
 					.style("left", function(d) {
@@ -202,39 +202,39 @@ function TreemapVisualization() {
 						col_spending_tally += getSpending(service_id, d);
 						return l + "px";
 					})
-					.style("width", function(d) { return colWidth(service_id, d)  + "px"; })
+					.style("width", function(d) { return colWidth(service_id, d)  + "px"; });
 			}
 		});		
-	}
+	};
 	
 	var getWidth = function() {return CHART_WIDTH - ROW_LABEL_WIDTH; };
 	var getHeight = function() {return CHART_HEIGHT };
 	
 	var inspect = function(obj) {
 		console.log(obj);
-	}	
+	};
 	
 	var rowHeight = function(service) {
-		var val = getSpending(service, TOTAL_PAYERS)
+		var val = getSpending(service, TOTAL_PAYERS);
 		var height = val / getSpending(TOTAL_SERVICES, TOTAL_PAYERS) * getHeight();
 		return Math.round(height);
-	}
+	};
 	
 	var colWidth = function(service, payer) {
 		var val = getSpending(service, payer);
 		var width = val / getSpending(service, TOTAL_PAYERS) * getWidth();
 		return Math.round(width);
-	}
+	};
 	
 	var rowTop = function(val) {
 		var top = val / getSpending(TOTAL_SERVICES, TOTAL_PAYERS) * getHeight();
 		return Math.round(top);
-	}
+	};
 	
 	var colLeft = function(service, val) {
 		var left = val / getSpending(service, TOTAL_PAYERS) * getWidth();
 		return Math.round(left);
-	}
+	};
 	
 	var getTextWidth = function(text, text_class) {
 		dimension_test.toggleClass(text_class);
@@ -243,7 +243,7 @@ function TreemapVisualization() {
 		dimension_test.html("");
 		dimension_test.toggleClass(text_class);
 		return w;
-	}
+	};
 	
 	var getTextHeight = function(text, text_class) {
 		dimension_test.toggleClass(text_class);
@@ -252,14 +252,14 @@ function TreemapVisualization() {
 		dimension_test.html("");
 		dimension_test.toggleClass(text_class);
 		return h;
-	}
+	};
 	
 	var getPayerSpendingAmountLabel = function(s, p) {
 		var val = getSpending(s, p);
 		var percent = formatPercent(val / getSpending(s, TOTAL_PAYERS));
 		val = formatSpending(val);
 		return "&nbsp;| $" + val + "B (" + percent + ")";		
-	}
+	};
 	
 	var getServiceSpendingAmountLabel = function(s, show_percent) {
 		var val = getSpending(s, TOTAL_PAYERS);
@@ -268,7 +268,7 @@ function TreemapVisualization() {
 		return show_percent ? 
 				"&nbsp;| $" + val + "B (" + percent + ")" :
 				"&nbsp;| $" + val + "B";	
-	}	
+	};
 	
 	var initRollovers = function() {
 		$(".tree_row_rollover").mouseenter(function() {
@@ -306,5 +306,5 @@ function TreemapVisualization() {
 				jq_tooltip_arrow.css("display", "none");
 			}
 		});	
-	}
+	};
 }

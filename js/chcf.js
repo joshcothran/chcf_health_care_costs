@@ -103,7 +103,7 @@ function initGlobal() {
 			current_year_index = years.length - 1;
 			playYear();
 		});
-	})
+	});
 }
 
 function getSpending(service, payer) { return spending[years[current_year_index]][service][payer]; }
@@ -128,14 +128,14 @@ function initEventHandlers() {
 		} else {
 			stopYear();
 		}
-	})
+	});
 	
 	$("#tt_link_notes")
 		.mouseenter(function() { $("#tt_notes").toggleClass("tt_visible"); })
 		.mouseleave(function() { $("#tt_notes").toggleClass("tt_visible"); });
 	
-	$("#btn_prev_year").click(function() { stopYear(); decrementYear(); })
-	$("#btn_next_year").click(function() { stopYear(); incrementYear(); })
+	$("#btn_prev_year").click(function() { stopYear(); decrementYear(); });
+	$("#btn_next_year").click(function() { stopYear(); incrementYear(); });
 }
 
 function playYear() {
@@ -214,17 +214,17 @@ var initTooltip = function() {
 		tt_label += "<div id='" + payer + "_tt' class='tt_row'>";
 		tt_label += 	"<div class='" + payer + " tt_legend'>&nbsp;</div>";
 		tt_label += 	"<div class='tt_legend_desc'>&nbsp;" + payers_legend[payer].title + "</div>";
-		tt_label += 	"<div class='tt_spending' id='tt_spending_" + payer + "'>&nbsp;</div>"
+		tt_label += 	"<div class='tt_spending' id='tt_spending_" + payer + "'>&nbsp;</div>";
 		tt_label += "</div>";
 		jq_tooltip.append(tt_label);
 	});
-}
+};
 
 function buildYearSelect() {	
 	// var year_select_values = _.clone(years).reverse();
 	_.each(years, function(year) {
-		jq_year_select.append("<option value='" + years.indexOf(year) + "'>" + year + "</option>")
-	})
+		jq_year_select.append("<option value='" + years.indexOf(year) + "'>" + year + "</option>");
+	});
 	
 	jq_year_select.selectToUISlider({
 		labels: 5,
@@ -293,7 +293,7 @@ function initLayout() {
 		jq_footer_legend.append(footer_label);
 	});
 	
-	$(".footer_legend").css("top", (FOOTER_HEIGHT - $(".footer_legend").height()) / 2 + "px")
+	$(".footer_legend").css("top", (FOOTER_HEIGHT - $(".footer_legend").height()) / 2 + "px");
 	$(".footer_legend_desc").css("line-height", FOOTER_HEIGHT + "px");
 	
 	// Show the content once it's (mostly) been laid out
