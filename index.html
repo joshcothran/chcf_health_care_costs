@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Health Care Costs 101 | Payment Sources | Payer Mix, by Service Category</title>
+		<title>Health Care Costs 102</title>
 		
 		<!-- STYLESHEET INCLUDES -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -33,6 +33,7 @@
 		<!-- Custom Code -->
 		<script type="text/javascript" src="js/TreemapVisualization.js"></script>
 		<script type="text/javascript" src="js/chcf.js"></script>	
+		<script type="text/javascript" src="js/data.js"></script>
 		<script>
 			$(document).ready(function() {
 				initGlobal();
@@ -43,7 +44,7 @@
 		<!-- Main content container -->
 		<div id="content">
 			<div id="header">
-				<div id="page_description">US Health Care Spending 1960-2010: Who Pays?</div>
+				<div id="page_description">US Health Care Spending 1960-2011: Who Pays?</div>
 				<div id="page_caption">Total <span id="caption_year">&nbsp;</span> Spending: $<span id="caption_spending">&nbsp;</span>B</div>
 			</div>
 			<div class="clearfix"></div>
@@ -60,7 +61,7 @@
 			<div class="clearfix"></div>
 			<div id="chart">
 				<div id="tooltip">
-					<h4 id="tt_service_title">&nbsp;</h4>
+					<h4 id="tt_category_title">&nbsp;</h4>
 					<div class="tt_row"><div class="tt_legend_desc">Total</div><div class="tt_spending" id="tt_spending_total">&nbsp;</div></div>
 				</div>
 				<img id="tooltip_arrow" src="img/tt_arrow.gif">

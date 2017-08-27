@@ -1,14 +1,14 @@
 // Data
+/*
 var spending;
 var services_elements;
 var payers_elements;
 var years;
 var services_legend;
 var payers_legend;
+*/
 
 // Constants
-var TOTAL_SERVICES = "s1";
-var TOTAL_PAYERS = "p1";
 var TIMER_DURATION = 700;
 var TRANSITION_DURATION = 350;
 
@@ -67,46 +67,53 @@ function initGlobal() {
 	jq_caption_spending = $("#caption_spending");
 	jq_year_select = $("#year_select");
 	
-	$.getJSON('data/spending.min.json', function(data) {
-		spending = data;
-
-		$.getJSON('data/schema.json', function(data) {
-			// Init data
-			services_elements = data.services_elements;
-			payers_elements = data.payers_elements;
-			years = data.years;
-			services_legend = data.services_legend;
-			payers_legend = data.payers_legend;
-			
-			// Init layout
-			initLayout();
-			
-			// Init year
-			current_year_index = 0;
-			buildYearSelect();
-			
-			jq_year_select.val(current_year_index);
-			jq_year_label.html(years[current_year_index]);
-			jq_caption_year.html(years[current_year_index]);
-			jq_caption_spending.html(formatSpending(getSpending(TOTAL_SERVICES, TOTAL_PAYERS)));
-			
-			// Init event handlers
-			initEventHandlers();
-			
-			// Init tooltip
-			initTooltip();
-			
-			// Init/render treemap
-			treemap = new TreemapVisualization("chart");
-			treemap.render();
-			
-			current_year_index = years.length - 1;
-			playYear();
-		});
-	});
+	// years
+	// category_legend
+	// payer_legend
+	// category_totals
+	// payer_totals
+	
+	// Init layout
+	initLayout();
+	
+	// Init year
+	current_year_index = 0;
+	buildYearSelect();
+	
+	jq_year_select.val(current_year_index);
+	jq_year_label.html(years[current_year_index]);
+	jq_caption_year.html(years[current_year_index]);
+	jq_caption_spending.html(formatSpending(getTotalSpending()));
+	
+	// Init event handlers
+	initEventHandlers();
+	
+	// Init tooltip
+	initTooltip();
+	
+	// Init/render treemap
+	treemap = new TreemapVisualization("chart");
+	treemap.render();
+	
+	current_year_index = years.length - 1;
+	playYear();
 }
 
-function getSpending(service, payer) { return spending[years[current_year_index]][service][payer]; }
+function getTotalSpending() {
+	var totalSpending = 0;
+	_.each(category_totals, function(c) {
+		totalSpending += c[current_year_index];
+	});
+	return totalSpending;
+}
+
+function getCategorySpending(category) {
+	return category_totals[category][current_year_index];
+}
+
+function getPayerSpending(category, payer) {
+	return payer_totals[category][payer][current_year_index];
+}
 
 function initEventHandlers() {	
 	jq_year_select.change(function() {
@@ -114,7 +121,7 @@ function initEventHandlers() {
 			current_year_index = parseInt(this.value);
 			jq_year_label.html(years[current_year_index]);
 			jq_caption_year.html(years[current_year_index]);
-			jq_caption_spending.html(formatSpending(getSpending(TOTAL_SERVICES, TOTAL_PAYERS)));
+			jq_caption_spending.html(formatSpending(getTotalSpending()));
 			jq_year_select.val(current_year_index);
 			treemap.update();
 		}
@@ -185,7 +192,7 @@ function decrementYear() {
 function updateCurrentYear() {
 	jq_year_label.html(years[current_year_index]);
 	jq_caption_year.html(years[current_year_index]);
-	jq_caption_spending.html(formatSpending(getSpending(TOTAL_SERVICES, TOTAL_PAYERS)));
+	jq_caption_spending.html(formatSpending(getTotalSpending()));
 	jq_year_select.val(current_year_index);
 	jq_year_select.trigger("change");
 	treemap.update();
@@ -209,12 +216,12 @@ var initTooltip = function() {
 	
 	jq_tooltip_arrow.css("left", ROW_LABEL_WIDTH - TT_INDENT + (TT_BORDER_WIDTH * 2) + "px");
 	
-	_.each(payers_elements, function(payer) {
+	_.each(payer_legend, function(payer_name, payer_id) {
 		var tt_label = "";
-		tt_label += "<div id='" + payer + "_tt' class='tt_row'>";
-		tt_label += 	"<div class='" + payer + " tt_legend'>&nbsp;</div>";
-		tt_label += 	"<div class='tt_legend_desc'>&nbsp;" + payers_legend[payer].title + "</div>";
-		tt_label += 	"<div class='tt_spending' id='tt_spending_" + payer + "'>&nbsp;</div>";
+		tt_label += "<div id='" + payer_id + "_tt' class='tt_row'>";
+		tt_label += 	"<div class='" + payer_id + " tt_legend'>&nbsp;</div>";
+		tt_label += 	"<div class='tt_legend_desc'>&nbsp;" + payer_name + "</div>";
+		tt_label += 	"<div class='tt_spending' id='tt_spending_" + payer_id + "'>&nbsp;</div>";
 		tt_label += "</div>";
 		jq_tooltip.append(tt_label);
 	});
@@ -286,10 +293,13 @@ function initLayout() {
 	jq_footer_legend.css("height", FOOTER_HEIGHT + "px");
 	jq_footer_legend.css("line-height", FOOTER_HEIGHT + "px");
 	
-	_.each(payers_elements, function(payer) {
+	payer_ids = _.map(payer_legend, function(payer_name, payer_id){ return payer_id; });
+	_.each(payer_ids, function(payer_id, payer_index) {
 		var footer_label = "";
-		footer_label += 	"<div class='" + payer + " footer_legend'>&nbsp;</div>";
-		footer_label += 	"<div class='footer_legend_desc'>&nbsp;" + payers_legend[payer].title + "</div>";
+		footer_label += 	"<div class='" + payer_id + " footer_legend'>&nbsp;</div>";
+		footer_label += 	"<div class='footer_legend_desc";
+		if (payer_index == payer_ids.length - 1) footer_label += " last";
+		footer_label += 	"'>" + payer_legend[payer_id] + "</div>";
 		jq_footer_legend.append(footer_label);
 	});
 	

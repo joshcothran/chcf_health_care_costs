@@ -122,12 +122,12 @@ a:hover {
 	color: white;
 }
 
-.p2 { background-color: #B94D27; } /* Private Insurance - rust */
-.p3 { background-color: #EA8F23; } /* Out-of-Pocket - orange */
-.p4 { background-color: #FEC661; } /* Other Payers - light orange */
-.p5 { background-color: #B3AB46; } /* Medicare - green */
-.p6 { background-color: #596338; } /* Medicaid - dark green*/
-.p7 { background-color: #E2D678; } /* Other Public Insurance - light green*/
+.PHI { background-color: #B94D27; } /* Private Insurance - rust */
+.OOP { background-color: #EA8F23; } /* Out-of-Pocket - orange */
+.OTPPP { background-color: #FEC661; } /* Other Payers - light orange */
+.MCARE { background-color: #B3AB46; } /* Medicare - green */
+.MC { background-color: #596338; } /* Medicaid - dark green*/
+.Opub { background-color: #E2D678; } /* Other Public Insurance - light green*/
 
 
 #tooltip {
@@ -242,7 +242,12 @@ a:hover {
 
 .footer_legend_desc {
 	display:inline-block;
+	padding-left: 3px;
 	padding-right: 10px;
 	font-size:12px;
+}
+
+.footer_legend_desc.last {
+	padding-right: 0;
 }
 
