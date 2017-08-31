@@ -1,87 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Health Care Costs 102</title>
-		
-		<!-- STYLESHEET INCLUDES -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="css/smoothness/jquery-ui-1.8.22.custom.css" type="text/css" />
-		<link href="css/ui.slider.extras.css" rel="stylesheet">
-		<link href="css/chcf.css" rel="stylesheet">
-		
-		<!-- JAVASCRIPT INCLUDES -->
-		<!-- IE8 Compatibility -->
-		<script>var animate = true;</script>
-		<!-- d34raphael | http://webmonarch.github.com/d34raphael/ -->
-		<!--[if lte IE 8]> 
-		<script type="text/javascript" src="js/lib/sizzle.js"></script> 
-		<script type="text/javascript" src="js/lib/compat.js"></script> 
-		<script>animate = false;</script>
-		<![endif]--> 
-		<script type="text/javascript" src="js/lib/raphael.js"></script> 
-		<script type="text/javascript" src="js/lib/d3.v2.js"></script>
-		<!-- jQuery | http://jquery.com/ -->
-		<script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
-		<!-- Bootstrap | http://twitter.github.com/bootstrap/ -->
-		<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
-		<!-- underscore.js | http://documentcloud.github.com/underscore/ -->
-		<script type="text/javascript" src="js/lib/underscore-min.js"></script>
-		<!-- Filament Group JQuery UI Slider | http://www.filamentgroup.com/lab/update_jquery_ui_slider_from_a_select_element_now_with_aria_support/ -->
-		<script type="text/javascript" src="js/lib/jquery-ui-1.8.22.custom.min.js"></script>
-		<script type="text/javascript" src="js/lib/selectToUISlider.jQuery.js"></script>
-		<!-- Custom Code -->
-		<script type="text/javascript" src="js/TreemapVisualization.js"></script>
-		<script type="text/javascript" src="js/chcf.js"></script>	
-		<script type="text/javascript" src="js/data.js"></script>
-		<script>
-			$(document).ready(function() {
-				initGlobal();
-			});
-		</script>
-	</head>
-	<body>
-		<!-- Main content container -->
-		<div id="content">
-			<div id="header">
-				<div id="page_description">US Health Care Spending 1960-2011: Who Pays?</div>
-				<div id="page_caption">Total <span id="caption_year">&nbsp;</span> Spending: $<span id="caption_spending">&nbsp;</span>B</div>
-			</div>
-			<div class="clearfix"></div>
-			<div id="controls">
-				<div id="year_buttons" class="btn-group">
-		          <a id="btn_play_year" class="btn"><i class="icon-play"></i></a>
-		          <a id="btn_prev_year" class="btn"><i class="icon-step-backward"></i></a>
-		          <a id="btn_next_year" class="btn"><i class="icon-step-forward"></i></a>
-				</div>
-				<div id="year_slider">
-					<select id="year_select" name="year_select"></select>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div id="chart">
-				<div id="tooltip">
-					<h4 id="tt_category_title">&nbsp;</h4>
-					<div class="tt_row"><div class="tt_legend_desc">Total</div><div class="tt_spending" id="tt_spending_total">&nbsp;</div></div>
-				</div>
-				<img id="tooltip_arrow" src="img/tt_arrow.gif">
-				<div id="year_label">&nbsp;</div>
-				<div id="tt_notes" class="footer_tooltip">
-					<h4>NOTES</h4>
-					<p>Health spending refers to personal health care and excludes public health activities, administration, and investment.</p>
-					<h4>SOURCE</h4>
-					<p>Centers for Medicare and Medicaid Services (CMS), Office of the Actuary, National Health Expenditure Data, 2012 release.
-					<h4>PAYER DEFINITIONS</h4>
-					<p><strong>Out-of-pocket</strong> is consumer spending on copays, deductibles, and goods and care not covered by insurance; it does not include premiums.</p>
-					<p><strong>Other public insurance</strong> includes Departments of Defense and Veterans Affairs health care, as well as the Children’s Health Insurance Program (CHIP).</p>
-					<p><strong>Other payers</strong> includes worksite health care, Indian Health Service, workers’ compensation, maternal and child health, and vocational rehabilitation.</p>
-				</div>
-			</div>
-			<div id="footer">
-				<div id="footnotes_link"><a id="tt_link_notes">Notes</a></div>
-				<div id="footer_legend"></div>
-			</div>
-		</div>
-		<div id="dimension_test"></div>
-	</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Health Care Costs 101</title>
+    
+    <!-- STYLESHEET INCLUDES -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/smoothness/jquery-ui-1.8.22.custom.css" type="text/css" />
+    <link href="css/ui.slider.extras.css" rel="stylesheet">
+    <link href="css/chcf.css" rel="stylesheet">
+    
+    <!-- JAVASCRIPT INCLUDES -->
+    <!-- IE8 Compatibility -->
+    <script>var animate = true;</script>
+    <!-- d34raphael | http://webmonarch.github.com/d34raphael/ -->
+    <!--[if lte IE 8]> 
+    <script type="text/javascript" src="js/lib/sizzle.js"></script> 
+    <script type="text/javascript" src="js/lib/compat.js"></script> 
+    <script>animate = false;</script>
+    <![endif]--> 
+    <script type="text/javascript" src="js/lib/raphael.js"></script> 
+    <script type="text/javascript" src="js/lib/d3.v2.js"></script>
+    <!-- jQuery | http://jquery.com/ -->
+    <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
+    <!-- Bootstrap | http://twitter.github.com/bootstrap/ -->
+    <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+    <!-- underscore.js | http://documentcloud.github.com/underscore/ -->
+    <script type="text/javascript" src="js/lib/underscore-min.js"></script>
+    <!-- Filament Group JQuery UI Slider | http://www.filamentgroup.com/lab/update_jquery_ui_slider_from_a_select_element_now_with_aria_support/ -->
+    <script type="text/javascript" src="js/lib/jquery-ui-1.8.22.custom.min.js"></script>
+    <script type="text/javascript" src="js/lib/selectToUISlider.jQuery.js"></script>
+    <!-- Custom Code -->
+    <script type="text/javascript" src="js/TreemapVisualization.js"></script>
+    <script type="text/javascript" src="js/chcf.js"></script>	
+    <script type="text/javascript" src="js/data.js"></script>
+    <script>
+      $(document).ready(function() {
+        initGlobal();
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Main content container -->
+    <div id="content">
+      <div id="header">
+        <div id="page_description">US Health Care Spending 1960-2015: Who Pays?</div>
+        <div id="page_caption">Total <span id="caption_year">&nbsp;</span> Spending: $<span id="caption_spending">&nbsp;</span>B</div>
+      </div>
+      <div class="clearfix"></div>
+      <div id="controls">
+        <div id="year_buttons" class="btn-group">
+              <a id="btn_play_year" class="btn"><i class="icon-play"></i></a>
+              <a id="btn_prev_year" class="btn"><i class="icon-step-backward"></i></a>
+              <a id="btn_next_year" class="btn"><i class="icon-step-forward"></i></a>
+        </div>
+        <div id="year_slider">
+          <select id="year_select" name="year_select"></select>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div id="chart">
+        <div id="tooltip">
+          <h4 id="tt_category_title">&nbsp;</h4>
+          <div class="tt_row"><div class="tt_legend_desc">Total</div><div class="tt_spending" id="tt_spending_total">&nbsp;</div></div>
+        </div>
+        <img id="tooltip_arrow" src="img/tt_arrow.gif">
+        <div id="year_label">&nbsp;</div>
+        <div id="tt_notes" class="footer_tooltip">
+          <h4>NOTES</h4>
+          <p>Health spending refers to personal health care and excludes public health activities, administration, and investment.</p>
+          <h4>SOURCE</h4>
+          <p>Centers for Medicare and Medicaid Services (CMS), Office of the Actuary, National Health Expenditure Data, Calendar Years 1960-2015.
+          <h4>PAYER DEFINITIONS</h4>
+          <p><strong>Out-of-pocket</strong> is consumer spending on copays, deductibles, and goods and care not covered by insurance; it does not include premiums.</p>
+          <p><strong>Other public insurance</strong> includes Departments of Defense and Veterans Affairs health care, as well as the Children’s Health Insurance Program (CHIP).</p>
+          <p><strong>Other payers</strong> includes worksite health care, Indian Health Service, workers’ compensation, maternal and child health, and vocational rehabilitation.</p>
+        </div>
+      </div>
+      <div id="footer">
+        <div id="footnotes_link"><a id="tt_link_notes">Notes</a></div>
+        <div id="footer_legend"></div>
+      </div>
+    </div>
+    <div id="dimension_test"></div>
+  </body>
 </html>

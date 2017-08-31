@@ -183,12 +183,7 @@ jQuery.fn.selectToUISlider = function(settings){
 	}
 	
 
-	
-	
-	//show and hide labels depending on labels pref
-	//show the last one if there are more than 1 specified
-	if(options.labels > 1) sliderComponent.find('.ui-slider-scale li:last span.ui-slider-label, .ui-slider-scale dd:last span.ui-slider-label').addClass('ui-slider-label-show');
-
+	/*
 	//set increment
 	var increm = Math.max(1, Math.round(selectOptions.length / options.labels));
 	//show em based on inc
@@ -197,7 +192,24 @@ jQuery.fn.selectToUISlider = function(settings){
 			sliderComponent.find('.ui-slider-scale li:eq('+ j +') span.ui-slider-label, .ui-slider-scale dd:eq('+ j +') span.ui-slider-label').addClass('ui-slider-label-show');
 		}
 	}
+   */
+	
+	//show and hide labels depending on labels pref
+	//show the last one if there are more than 1 specified
+	if(options.labels > 1) sliderComponent.find('.ui-slider-scale li:last span.ui-slider-label, .ui-slider-scale dd:last span.ui-slider-label').addClass('ui-slider-label-show');
 
+	//set increment
+	// var increm = Math.max(1, Math.round(selectOptions.length / options.labels));
+   var increm = 10;
+	//show em based on inc
+	for(var j=0; j<selectOptions.length; j+=increm){
+		// if((selectOptions.length - j) > increm){//don't show if it's too close to the end label
+			sliderComponent.find('.ui-slider-scale li:eq('+ j +') span.ui-slider-label, .ui-slider-scale dd:eq('+ j +') span.ui-slider-label').addClass('ui-slider-label-show');
+		// }
+	}
+
+
+   
 	//style the dt's
 	sliderComponent.find('.ui-slider-scale dt').each(function(i){
 		jQuery(this).css({
