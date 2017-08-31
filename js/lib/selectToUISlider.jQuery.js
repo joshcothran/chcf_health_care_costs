@@ -200,12 +200,13 @@ jQuery.fn.selectToUISlider = function(settings){
 
 	//set increment
 	// var increm = Math.max(1, Math.round(selectOptions.length / options.labels));
-   var increm = 10;
+	var increm = 10;
+	var minSpace = 5;
 	//show em based on inc
 	for(var j=0; j<selectOptions.length; j+=increm){
-		// if((selectOptions.length - j) > increm){//don't show if it's too close to the end label
+		if((selectOptions.length - j) > minSpace){//don't show if it's too close to the end label
 			sliderComponent.find('.ui-slider-scale li:eq('+ j +') span.ui-slider-label, .ui-slider-scale dd:eq('+ j +') span.ui-slider-label').addClass('ui-slider-label-show');
-		// }
+		}
 	}
 
 

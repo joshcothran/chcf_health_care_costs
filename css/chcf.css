@@ -127,8 +127,7 @@ a:hover {
 .OTPPP { background-color: #FEC661; } /* Other Payers - light orange */
 .MCARE { background-color: #B3AB46; } /* Medicare - green */
 .MC { background-color: #596338; } /* Medicaid - dark green*/
-.Opub { background-color: #E2D678; } /* Other Public Insurance - light green*/
-
+.OPHI { background-color: #E2D678; } /* Other Public Insurance - light green*/
 
 #tooltip {
 	position:absolute;
